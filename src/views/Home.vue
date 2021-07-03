@@ -26,128 +26,89 @@
           </v-card>
           <v-card class="rounded-xl">
             <!-- <v-list three-line> -->
-              <template v-for="(item) in items">
-                <v-subheader v-if="item.header" :key="item.header" v-text="item.header"></v-subheader>
-                <v-list-item v-else :key="item.title">
+              <template v-for="(board1) in board1">
+                <v-subheader v-if="board1.header" :key="board1.header" v-text="board1.header"></v-subheader>
+                <v-list-item v-else :key="board1.title">
                   <!-- <v-list-item-avatar color="#EFF4F1" size="70" rounded>
                     <img :src="item.avatar" />
                   </v-list-item-avatar> -->
                   <v-list-item-content>
-                    <v-list-item-title v-html="item.title"></v-list-item-title>
-                    <v-list-item-title v-html="item.money"></v-list-item-title>
-                    <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
+                    <v-list-item-title v-html="board1.title"></v-list-item-title>
+                    <v-list-item-title v-html="board1.money"></v-list-item-title>
+                    <v-list-item-subtitle v-html="board1.subtitle"></v-list-item-subtitle>
                   </v-list-item-content>
-
-
-                  <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-bookmark</v-icon>
-              </v-btn>
-
-              <v-btn icon>
-                <v-icon>mdi-share-variant</v-icon>
-              </v-btn>
-
-
-
+                  <v-btn class="ma-2" text icon color="gray" >
+                    <v-icon large color="gray" style="font-size: 28px">
+                      mdi-menu
+                    </v-icon>
+                  </v-btn>
                 </v-list-item>
-              </template>
-            <!-- </v-list> -->
+              <v-subheader v-if="board1.header" :key="board1.header" v-text="board1.header"></v-subheader>
+              <v-list-item v-else :key="board1.title">
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon>mdi-thumb-up</v-icon>
+              </v-btn>20
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon>mdi-thumb-down</v-icon>
+              </v-btn>20
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon large color="gray" style="font-size: 28px">
+                  mdi-message-text
+                </v-icon>
+              </v-btn>20
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon large color="gray" style="font-size: 28px">
+                  mdi-bookmark
+                </v-icon>
+              </v-btn>20
+              </v-list-item>
+            </template>
           </v-card>
+          <br>
+          <v-card class="rounded-xl">
+            <!-- <v-list three-line> -->
+              <template v-for="(board1) in board1">
+                <v-subheader v-if="board1.header" :key="board1.header" v-text="board1.header"></v-subheader>
+                <v-list-item v-else :key="board1.title">
+                  <!-- <v-list-item-avatar color="#EFF4F1" size="70" rounded>
+                    <img :src="item.avatar" />
+                  </v-list-item-avatar> -->
+                  <v-list-item-content>
+                    <v-list-item-title v-html="board1.title"></v-list-item-title>
+                    <v-list-item-title v-html="board1.money"></v-list-item-title>
+                    <v-list-item-subtitle v-html="board1.subtitle"></v-list-item-subtitle>
+                  </v-list-item-content>
+                  <v-btn class="ma-2" text icon color="gray" >
+                    <v-icon large color="gray" style="font-size: 28px">
+                      mdi-menu
+                    </v-icon>
+                  </v-btn>
+                </v-list-item>
+              <v-subheader v-if="board1.header" :key="board1.header" v-text="board1.header"></v-subheader>
+              <v-list-item v-else :key="board1.title">
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon>mdi-thumb-up</v-icon>
+              </v-btn>20
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon>mdi-thumb-down</v-icon>
+              </v-btn>20
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon large color="gray" style="font-size: 28px">
+                  mdi-message-text
+                </v-icon>
+              </v-btn>20
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon large color="gray" style="font-size: 28px">
+                  mdi-bookmark
+                </v-icon>
+              </v-btn>20
+              </v-list-item>
+            </template>
+          </v-card>
+          <br>
         </v-col>
-        <!-- <v-col cols="12" sm="6">
-            <v-text-field label="Search" prepend-inner-icon="fas fa-search" filled rounded color="#4FC694"></v-text-field>
-          <v-card class="rounded-xl mt-2">
-            <v-row>
-              <v-col cols="12" sm="4" align="center">
-                  <v-avatar size="300" tile>
-                    <v-img src="5.png"></v-img>
-                  </v-avatar>
-                  <v-btn fab icon class="ml-14"><v-icon>fas fa-minus</v-icon></v-btn>
-                  1
-                  <v-btn fab icon><v-icon>fas fa-plus</v-icon></v-btn>
-              </v-col>
-              <v-col cols="12" sm="8" class="px-10">
-                <v-app-bar flat color="rgba(0,0,0,0)">
-                  <v-spacer></v-spacer>
-                  <v-icon color="grey lighten-1">fas fa-heart</v-icon>
-                </v-app-bar>
-                <h3 class="grey--text">Lidah Buaya</h3>
-                <p class="grey--text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis consequuntur dolorum, 
-                      quibusdam eum pariatur, laboriosam quia provident placeat corrupti repellat odio at.
-                       Hic commodi .</p>
-                       <h5 class="grey--text">Overview</h5>
-                       <v-row>
-                         <v-col cols="12" sm="6">
-                           <v-app-bar flat color="rgba(0,0,0,0)">
-                             <v-avatar color="#FDD3E9" size="30" class="mr-3">
-                               <v-icon small color="grey darken-1">far fa-calendar-alt</v-icon>
-                             </v-avatar>
-                             30 Days
-                           </v-app-bar>
-                           <v-app-bar flat color="rgba(0,0,0,0)">
-                             <v-avatar color="#FDD3E9" size="30" class="mr-3">
-                               <v-icon small color="grey darken-1">fas fa-compress-alt</v-icon>
-                             </v-avatar>
-                             4.7 Diameter
-                           </v-app-bar>
-                         </v-col>
-                         <v-col cols="12" sm="6">
-                            <v-app-bar flat color="rgba(0,0,0,0)">
-                             <v-avatar color="#FDD3E9" size="30" class="mr-3">
-                               <v-icon small color="grey darken-1">fas fa-temperature-low</v-icon>
-                             </v-avatar>
-                             70% Humidity
-                           </v-app-bar>
-                           <v-app-bar flat color="rgba(0,0,0,0)">
-                             <v-avatar color="#FDD3E9" size="30" class="mr-3">
-                               <v-icon small color="grey darken-1">fas fa-tint</v-icon>
-                             </v-avatar>
-                             4.2° Height
-                           </v-app-bar>
-                         </v-col>
-                       </v-row>
-                       <v-btn rounded color="warning"><v-icon left>fas fa-plus</v-icon>Add to cart</v-btn>
-                       <strong class="ml-2">$234</strong>
-              </v-col>
-            </v-row>
-          </v-card>
-          <v-row>
-            <v-col cols="12" sm="6">
-              <v-card class="rounded-xl mt-16">
-                <v-row>
-                  <v-col cols="12" sm="4" align="center">
-                    <v-avatar size="200" tile class="mt-n16">
-                        <v-img src="2.png"></v-img>
-                    </v-avatar>
-                  </v-col>
-                  <v-col cols="12" sm="8" class="pa-10">
-                    <h3 class="black--text">Bonsi Tree</h3>
-                    <h3 class="black--text">$386</h3>
-                  </v-col>
-                </v-row>
-              </v-card>
-            </v-col>
-            <v-col cols="12" sm="6">
-              <v-card class="rounded-xl mt-16">
-                <v-row>
-                  <v-col cols="12" sm="4" align="center">
-                    <v-avatar size="200" tile class="mt-n16">
-                      <v-img src="66.png"></v-img>
-                    </v-avatar>
-                  </v-col>
-                  <v-col cols="12" sm="8" class="pa-10">
-                    <h3 class="black--text">Weired Cactus</h3>
-                    <h3 class="black--text">$128</h3>
-                  </v-col>
-                </v-row>
-              </v-card>
-            </v-col>
-          </v-row>
-        </v-col> -->
+
+
         <v-col cols="12" sm="4">
           <!-- <v-card class="mb-2 pa-1 borderRight" color="#4FC694"> -->
           <v-card class="mb-2 pa-1 borderRight" color="#808080">
@@ -238,38 +199,45 @@
 
 export default {
   data: () => ({
-    items: [
-        { header: '오늘의 글' },
-        {
-          title: `<strong>게시글 제목</strong>`,
-          money: '게시글 내용',
-          subtitle: `작성자`,
-        },
+    // items: [
+    //     { header: '오늘의 글' },
+    //     {
+    //       title: `<strong>게시글 제목</strong>`,
+    //       money: '게시글 내용',
+    //       subtitle: `작성자`,
+    //     },
        
-       {
-          title: `<strong>게시글 제목</strong>`,
-          money: '게시글 내용',
-          subtitle: `작성자`,
-        },
-         {
-          title: `<strong>게시글 제목</strong>`,
-          money: '게시글 내용',
-          subtitle: `작성자`,
-        },
-         {
-          title: `<strong>게시글 제목</strong>`,
-          money: '게시글 내용',
-          subtitle: `작성자`,
-        },
-         {
-          title: `<strong>게시글 제목</strong>`,
-          money: '게시글 내용',
-          subtitle: `작성자`,
-        },
-         {
-          title: `<strong>게시글 제목</strong>`,
-          money: '게시글 내용',
-          subtitle: `작성자`,
+    //    {
+    //       title: `<strong>게시글 제목</strong>`,
+    //       money: '게시글 내용',
+    //       subtitle: `작성자`,
+    //     },
+    //      {
+    //       title: `<strong>게시글 제목</strong>`,
+    //       money: '게시글 내용',
+    //       subtitle: `작성자`,
+    //     },
+    //      {
+    //       title: `<strong>게시글 제목</strong>`,
+    //       money: '게시글 내용',
+    //       subtitle: `작성자`,
+    //     },
+    //      {
+    //       title: `<strong>게시글 제목</strong>`,
+    //       money: '게시글 내용',
+    //       subtitle: `작성자`,
+    //     },
+    //      {
+    //       title: `<strong>게시글 제목</strong>`,
+    //       money: '게시글 내용',
+    //       subtitle: `작성자`,
+    //     },
+    //   ],
+      board1 :[
+        {
+          title: `<strong>제목입력</strong>`,
+          money: '내용입력',
+          subtitle: `두줄`,
         },
       ],
       files :[
