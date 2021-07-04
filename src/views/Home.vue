@@ -1,11 +1,44 @@
 <template>
-  <v-app :style="{background: $vuetify.theme.themes.dark.background}">
+  <!-- <v-app :style="{background: $vuetify.theme.themes.light.background}"> -->
     <v-container fluid>
-      <v-row>
-        <v-col cols="12" sm="12">
-          <!-- <v-card class="mb-2 pa-1 borderLeft" color="#4FC694"> -->
-          <v-card class="mb-2 pa-1 borderLeft" color="#808080">
-            <!-- <v-toolbar color="#4FC694" dark flat> -->
+      <!-- <v-row>
+        <v-col cols="12" sm="12"> -->
+          <!-- <div> -->
+            <v-system-bar
+              color="white"
+              style="height: 30px;"
+            ></v-system-bar>
+            <hr>
+            <v-toolbar
+              color="white"
+              cards
+              dark
+              flat
+            >
+              <v-btn
+                text
+                color="black"
+              >
+                
+              </v-btn>
+              <v-spacer></v-spacer>
+              <v-btn
+                text
+                color="black"
+              >
+                게시판명
+              </v-btn>
+              <v-spacer></v-spacer>
+              <v-btn
+                text
+                color="black"
+              >
+                
+              </v-btn>
+            </v-toolbar>
+            <hr>
+            <br>
+          <!-- <v-card class="mb-2 pa-1 borderLeft" color="#808080">
             <v-toolbar color="#808080" dark flat>
               <v-tabs align-with-title>
                 <v-tabs-slider color="white"></v-tabs-slider>
@@ -14,16 +47,9 @@
                     <v-icon>fas fa-home</v-icon>
                   </v-btn>
                 </v-tab>
-                <!-- <v-tab>
-                  <v-btn dark icon>
-                    <v-badge content="2" color="orange">
-                      <v-icon>fas fa-shopping-cart</v-icon>
-                    </v-badge>
-                  </v-btn>
-                </v-tab> -->
               </v-tabs>
             </v-toolbar>
-          </v-card>
+          </v-card> -->
           <v-card class="rounded-xl">
             <!-- <v-list three-line> -->
               <template v-for="(board1) in board1">
@@ -213,7 +239,7 @@
             </template>
           </v-card>
           <br>
-        </v-col>
+        <!-- </v-col> -->
 
 
         <!-- <v-col cols="12" sm="4">
@@ -274,29 +300,38 @@
                   </v-app-bar>
                 </v-card>
         </v-col>-->
-      </v-row>
-
+      <!-- </v-row> -->
+          <!-- </div> -->
       <v-bottom-navigation
         :value="value"
-        color="teal"
+        color="white"
         grow
+        style="position: fixed"
       >
         <v-btn>
-          <span>Recents</span>
-          <v-icon>mdi-history</v-icon>
+          <!-- <span>Recents</span> -->
+          <v-icon>mdi-home</v-icon>
         </v-btn>
         <v-btn>
-          <span>Favorites</span>
-          <v-icon>mdi-heart</v-icon>
+          <!-- <span>Favorites</span> -->
+          <v-icon>mdi-magnify</v-icon>
         </v-btn>
         <v-btn>
-          <span>Nearby</span>
-          <v-icon>mdi-map-marker</v-icon>
+          <v-icon>
+            mdi-plus
+          </v-icon>
+        </v-btn>
+        <v-btn>
+          <!-- <span>Nearby</span> -->
+          <v-icon>mdi-bookmark</v-icon>
+        </v-btn>
+        <v-btn>
+          <v-icon>mdi-face</v-icon>
         </v-btn>
       </v-bottom-navigation>
-
+<!-- </div> -->
     </v-container>
-  </v-app>
+  <!-- </v-app> -->
 </template>
 
 <script>
