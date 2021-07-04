@@ -2,7 +2,7 @@
   <v-app :style="{background: $vuetify.theme.themes.dark.background}">
     <v-container fluid>
       <v-row>
-        <v-col cols="12" sm="8">
+        <v-col cols="12" sm="12">
           <!-- <v-card class="mb-2 pa-1 borderLeft" color="#4FC694"> -->
           <v-card class="mb-2 pa-1 borderLeft" color="#808080">
             <!-- <v-toolbar color="#4FC694" dark flat> -->
@@ -33,7 +33,7 @@
                     <img :src="item.avatar" />
                   </v-list-item-avatar> -->
                   <v-list-item-content>
-                    <v-list-item-title v-html="board1.title"></v-list-item-title>
+                    <v-list-item-title class="v-list-item-title" v-html="board1.title"></v-list-item-title>
                     <v-list-item-title v-html="board1.money"></v-list-item-title>
                     <v-list-item-subtitle v-html="board1.subtitle"></v-list-item-subtitle>
                   </v-list-item-content>
@@ -45,22 +45,28 @@
                 </v-list-item>
               <v-subheader v-if="board1.header" :key="board1.header" v-text="board1.header"></v-subheader>
               <v-list-item v-else :key="board1.title">
+                <v-btn class="ma-2" text icon color="gray">
+                  <v-icon large color="gray" style="font-size: 23px">mdi-tag</v-icon>
+                </v-btn><font size="3em" color="blue">작성자 닉네임</font>
+              </v-list-item>
+              <v-subheader v-if="board1.header" :key="board1.header" v-text="board1.header"></v-subheader>
+              <v-list-item v-else :key="board1.title">
               <v-btn class="ma-2" text icon color="gray">
-                <v-icon>mdi-thumb-up</v-icon>
+                <v-icon large color="gray" style="font-size: 24px">mdi-thumb-up</v-icon>
               </v-btn>20
               <v-btn class="ma-2" text icon color="gray">
-                <v-icon>mdi-thumb-down</v-icon>
+                <v-icon large color="gray" style="font-size: 24px">mdi-thumb-down</v-icon>
               </v-btn>20
               <v-btn class="ma-2" text icon color="gray">
-                <v-icon large color="gray" style="font-size: 28px">
+                <v-icon large color="gray" style="font-size: 25px">
                   mdi-message-text
                 </v-icon>
               </v-btn>20
               <v-btn class="ma-2" text icon color="gray">
-                <v-icon large color="gray" style="font-size: 28px">
+                <v-icon large color="gray" style="font-size: 25px">
                   mdi-bookmark
                 </v-icon>
-              </v-btn>20
+              </v-btn>북마크
               </v-list-item>
             </template>
           </v-card>
@@ -74,7 +80,7 @@
                     <img :src="item.avatar" />
                   </v-list-item-avatar> -->
                   <v-list-item-content>
-                    <v-list-item-title v-html="board1.title"></v-list-item-title>
+                    <v-list-item-title class="v-list-item-title" v-html="board1.title"></v-list-item-title>
                     <v-list-item-title v-html="board1.money"></v-list-item-title>
                     <v-list-item-subtitle v-html="board1.subtitle"></v-list-item-subtitle>
                   </v-list-item-content>
@@ -86,22 +92,123 @@
                 </v-list-item>
               <v-subheader v-if="board1.header" :key="board1.header" v-text="board1.header"></v-subheader>
               <v-list-item v-else :key="board1.title">
+                <v-btn class="ma-2" text icon color="gray">
+                  <v-icon large color="gray" style="font-size: 23px">mdi-tag</v-icon>
+                </v-btn><font size="3em" color="blue">작성자 닉네임</font>
+              </v-list-item>
+              <v-subheader v-if="board1.header" :key="board1.header" v-text="board1.header"></v-subheader>
+              <v-list-item v-else :key="board1.title">
               <v-btn class="ma-2" text icon color="gray">
-                <v-icon>mdi-thumb-up</v-icon>
+                <v-icon large color="gray" style="font-size: 24px">mdi-thumb-up</v-icon>
               </v-btn>20
               <v-btn class="ma-2" text icon color="gray">
-                <v-icon>mdi-thumb-down</v-icon>
+                <v-icon large color="gray" style="font-size: 24px">mdi-thumb-down</v-icon>
               </v-btn>20
               <v-btn class="ma-2" text icon color="gray">
-                <v-icon large color="gray" style="font-size: 28px">
+                <v-icon large color="gray" style="font-size: 25px">
                   mdi-message-text
                 </v-icon>
               </v-btn>20
               <v-btn class="ma-2" text icon color="gray">
-                <v-icon large color="gray" style="font-size: 28px">
+                <v-icon large color="gray" style="font-size: 25px">
                   mdi-bookmark
                 </v-icon>
+              </v-btn>북마크
+              </v-list-item>
+            </template>
+          </v-card>
+          <br>
+          <v-card class="rounded-xl">
+            <!-- <v-list three-line> -->
+              <template v-for="(board1) in board1">
+                <v-subheader v-if="board1.header" :key="board1.header" v-text="board1.header"></v-subheader>
+                <v-list-item v-else :key="board1.title">
+                  <!-- <v-list-item-avatar color="#EFF4F1" size="70" rounded>
+                    <img :src="item.avatar" />
+                  </v-list-item-avatar> -->
+                  <v-list-item-content>
+                    <v-list-item-title class="v-list-item-title" v-html="board1.title"></v-list-item-title>
+                    <v-list-item-title v-html="board1.money"></v-list-item-title>
+                    <v-list-item-subtitle v-html="board1.subtitle"></v-list-item-subtitle>
+                  </v-list-item-content>
+                  <v-btn class="ma-2" text icon color="gray" >
+                    <v-icon large color="gray" style="font-size: 28px">
+                      mdi-menu
+                    </v-icon>
+                  </v-btn>
+                </v-list-item>
+              <v-subheader v-if="board1.header" :key="board1.header" v-text="board1.header"></v-subheader>
+              <v-list-item v-else :key="board1.title">
+                <v-btn class="ma-2" text icon color="gray">
+                  <v-icon large color="gray" style="font-size: 23px">mdi-tag</v-icon>
+                </v-btn><font size="3em" color="blue">작성자 닉네임</font>
+              </v-list-item>
+              <v-subheader v-if="board1.header" :key="board1.header" v-text="board1.header"></v-subheader>
+              <v-list-item v-else :key="board1.title">
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon large color="gray" style="font-size: 24px">mdi-thumb-up</v-icon>
               </v-btn>20
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon large color="gray" style="font-size: 24px">mdi-thumb-down</v-icon>
+              </v-btn>20
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon large color="gray" style="font-size: 25px">
+                  mdi-message-text
+                </v-icon>
+              </v-btn>20
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon large color="gray" style="font-size: 25px">
+                  mdi-bookmark
+                </v-icon>
+              </v-btn>북마크
+              </v-list-item>
+            </template>
+          </v-card>
+          <br>
+          <v-card class="rounded-xl">
+            <!-- <v-list three-line> -->
+              <template v-for="(board1) in board1">
+                <v-subheader v-if="board1.header" :key="board1.header" v-text="board1.header"></v-subheader>
+                <v-list-item v-else :key="board1.title">
+                  <!-- <v-list-item-avatar color="#EFF4F1" size="70" rounded>
+                    <img :src="item.avatar" />
+                  </v-list-item-avatar> -->
+                  <v-list-item-content>
+                    <v-list-item-title class="v-list-item-title" v-html="board1.title"></v-list-item-title>
+                    <v-list-item-title v-html="board1.money"></v-list-item-title>
+                    <v-list-item-subtitle v-html="board1.subtitle"></v-list-item-subtitle>
+                  </v-list-item-content>
+                  <v-btn class="ma-2" text icon color="gray" >
+                    <v-icon large color="gray" style="font-size: 28px">
+                      mdi-menu
+                    </v-icon>
+                  </v-btn>
+                </v-list-item>
+              <v-subheader v-if="board1.header" :key="board1.header" v-text="board1.header"></v-subheader>
+              <v-list-item v-else :key="board1.title">
+                <v-btn class="ma-2" text icon color="gray">
+                  <v-icon large color="gray" style="font-size: 23px">mdi-tag</v-icon>
+                </v-btn><font size="3em" color="blue">작성자 닉네임</font>
+                <!-- <font size="3em" color="blue">작성자 닉네임</font> -->
+              </v-list-item>
+              <v-subheader v-if="board1.header" :key="board1.header" v-text="board1.header"></v-subheader>
+              <v-list-item v-else :key="board1.title">
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon large color="gray" style="font-size: 24px">mdi-thumb-up</v-icon>
+              </v-btn>20
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon large color="gray" style="font-size: 24px">mdi-thumb-down</v-icon>
+              </v-btn>20
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon large color="gray" style="font-size: 25px">
+                  mdi-message-text
+                </v-icon>
+              </v-btn>20
+              <v-btn class="ma-2" text icon color="gray">
+                <v-icon large color="gray" style="font-size: 25px">
+                  mdi-bookmark
+                </v-icon>
+              </v-btn>북마크
               </v-list-item>
             </template>
           </v-card>
@@ -109,16 +216,13 @@
         </v-col>
 
 
-        <v-col cols="12" sm="4">
-          <!-- <v-card class="mb-2 pa-1 borderRight" color="#4FC694"> -->
+        <!-- <v-col cols="12" sm="4">
           <v-card class="mb-2 pa-1 borderRight" color="#808080">
-            <!-- <v-toolbar color="#4FC694" dark flat> -->
             <v-toolbar color="#808080" dark flat>
               <v-avatar class="ml-14 mr-2 border" size="35">
                 <img src="https://cdn.vuetifyjs.com/images/lists/2.jpg" />
               </v-avatar>
               <v-toolbar-title class="title white--text pl-0 mr-3">박시현</v-toolbar-title>
-              <!-- <v-icon small>fas fa-chevron-down</v-icon> -->
               </v-toolbar>   
                 </v-card>
                 <v-card class="rounded-xl">
@@ -169,7 +273,7 @@
                     <v-btn text color="orange">Add</v-btn>
                   </v-app-bar>
                 </v-card>
-        </v-col>
+        </v-col>-->
       </v-row>
 
       <v-bottom-navigation
@@ -282,13 +386,16 @@ export default {
 }
 </script>
 <style scoped>
-.borderLeft{
-border-radius: 50px 0px 50px 0px !important;
-}
-.borderRight{
-  border-radius: 0px 50px 0px 50px !important;
-}
-.border{
-  border: 2px solid white !important;
-}
+  .borderLeft{
+  border-radius: 50px 0px 50px 0px !important;
+  }
+  .borderRight{
+    border-radius: 0px 50px 0px 50px !important;
+  }
+  .border{
+    border: 2px solid white !important;
+  }
+  .v-list-item-title {
+    color:blue;
+  }
 </style>

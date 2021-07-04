@@ -1,36 +1,73 @@
 <template>
-    <div class="vue-tempalte">
-        <form>
-            <h3>Sign In</h3>
+  <v-app :style="{background: $vuetify.theme.themes.background}">
+    <v-container fluid>
+      <v-row>
+        <v-col cols="12" sm="12">
+            <v-form
+                ref="form"
+                v-model="valid"
+                lazy-validation
+            >
 
-            <div class="form-group">
-                <label>Email address</label>
-                <input type="email" class="form-control form-control-lg" />
-            </div>
+                <v-text-field
+                v-model="email"
+                :rules="emailRules"
+                label="E-mail"
+                required
+                ></v-text-field>
 
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control form-control-lg" />
-            </div>
-            <br>
-            <div>
-                <button type="submit" class="btn btn-dark btn-lg btn-block">Sign In</button>
-            </div>
-            
-            <p class="forgot-password text-right">
-                Don't you have ID ? 
-                <router-link :to="{name: 'signup'}">sign up</router-link>
-            </p>
-        </form>
-    </div>
+                <v-text-field
+                v-model="password"
+                :rules="passwordRules"
+                label="Password"
+                required
+                ></v-text-field>
+
+                <v-btn
+                :disabled="!valid"
+                color="gray"
+                class="mr-4"
+                @click="login"
+                >
+                Login
+                </v-btn>
+
+                <v-btn
+                color="gray"
+                @click="SignUp"
+                >
+                Sign Up
+                </v-btn>
+            </v-form>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {}
-        }
-    }
+  export default {
+    data: () => ({
+      valid: true,
+      email: '',
+      emailRules: [
+        v => !!v || 'E-mail is required',
+        v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+      ],
+      password: '',
+      passwordRules: [
+        v => !!v || 'Password is required',
+        v => (v && v.length <= 10) || 'Password must be valid',
+      ],
+    }),
+
+    methods: {
+      login () {
+        this.$refs.form.login()
+      },
+      SignUp () {
+        this.$refs.form.SignUp()
+      },
+    },
+  }
 </script>
-<style src="../assets/css/login.css">
-</style>
