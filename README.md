@@ -1,9 +1,9 @@
-## Project setup
+## 프로젝트 모듈 다운로드
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 서버 실행
 ```
 npm run serve
 ```
